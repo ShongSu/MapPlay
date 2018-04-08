@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jVectorMap demo</title>
+  <link rel="stylesheet" href="jquery/jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
+  <script src="jquery/jquery.js"></script>
+  <script src="jquery/jquery-jvectormap-2.0.3.min.js"></script>
+  <script src="jquery/jquery-jvectormap-world-mill.js"></script>
+  <script src="jquery/jquery-jvectormap-cn-merc.js"></script>
+  <script src="jquery/jquery-jvectormap-ca-lcc.js"></script>
+</head>
+<body>
+  <div id="world-map" style="height: 100%; width: 50%; position: absolute; left: 0px; top: 0px; bottom: 0px;"></div>
+  <div id="ca-map" style="height: 100%; width: 50%; position: absolute; right: 0px; top: 0px; bottom: 0px;"></div>
+  <script>
+
+    var selected = [
+      "CA-NT",
+      "CA-ON",
+      "CA-QC"
+    ]
+    $(function(){
+      $('#world-map').vectorMap({map: 'world_mill',backgroundColor:"silver",regionStyle:{
+  initial: {
+    fill: 'green',
+    "fill-opacity": 1,
+    stroke: 'none',
+    "stroke-width": 0,
+    "stroke-opacity": 1
+  },
+  hover: {
+    fill: 'red',
+    "fill-opacity": 0.8,
+    cursor: 'pointer'
+  },
+  selected: {
+    fill: 'red'
+  },
+  selectedHover: {
+    fill: 'blue'
+  }
+},
+series:{
+
+}});
+      $('#cn-map').vectorMap({map: 'cn_merc'});
+      $('#ca-map').vectorMap({map: 'ca_lcc',regionStyle:{
+  initial: {
+    fill: 'green',
+    "fill-opacity": 1,
+    stroke: 'none',
+    "stroke-width": 0,
+    "stroke-opacity": 1
+  },
+  hover: {
+    fill: 'red',
+    "fill-opacity": 0.8,
+    cursor: 'pointer'
+  },
+  selected: {
+    fill: 'red'
+  },
+  selectedHover: {
+    fill: 'blue'
+  }
+},
+selectedRegions:selected});
+    });
+
+
+  </script>
+</body>
+</html>

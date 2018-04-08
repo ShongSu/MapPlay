@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+		Licensed to the Apache Software Foundation (ASF) under one
+		or more contributor license agreements.  See the NOTICE file
+		distributed with this work for additional information
+		regarding copyright ownership.  The ASF licenses this file
+		to you under the Apache License, Version 2.0 (the
+		"License"); you may not use this file except in compliance
+		with the License.  You may obtain a copy of the License at
+
+		http://www.apache.org/licenses/LICENSE-2.0
+
+		Unless required by applicable law or agreed to in writing,
+		software distributed under the License is distributed on an
+		"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+		 KIND, either express or implied.  See the License for the
+		specific language governing permissions and limitations
+		under the License.
+-->
+<html>
+		<head>
+				<!--
+				Customize this policy to fit your own app's needs. For more guidance, see:
+						https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+				Some notes:
+						* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+						* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+						* Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+								* Enable inline JS: add 'unsafe-inline' to default-src
+				-->
+				<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+				<meta name="format-detection" content="telephone=no">
+				<meta name="msapplication-tap-highlight" content="no">
+				<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+				<link rel="stylesheet" type="text/css" href="css/index.css">
+				<link rel="stylesheet" type="text/css" href="lib/jquery.mobile-1.4.0.min.css">
+				<script src="lib/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+				<script src="lib/jquery.mobile-1.4.0.min.js" type="text/javascript" charset="utf-8"></script>
+				<script type="text/javascript" src="js/index.js"></script>
+				<script type="text/javascript" src="cordova.js"></script>
+				<link rel="stylesheet" href="js/jquery/jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
+        <script src="js/jquery/jquery-jvectormap-2.0.3.min.js"></script>
+        <script src="js/jquery/jquery-jvectormap-world-mill.js"></script>
+        <script src="js/jquery/jquery-jvectormap-cn-merc.js"></script>
+        <script src="js/jquery/jquery-jvectormap-ca-lcc.js"></script>
+				<title>Hello World</title>
+		</head>
+		<body data-gr-c-s-loaded="true" class="ui-mobile-viewport ui-overlay-a" style="">
+
+
+		<!-- Start of first page: #one -->
+		<div data-role="page" id="one" data-url="one" tabindex="0" class="ui-page ui-page-theme-a ui-page-active" style="min-height: 846px;">
+
+			<div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+				<h1 class="ui-title" role="heading" aria-level="1">Map Play</h1>
+				<a href="#two" class="ui-btn ui-shadow ui-corner-all" data-transition="slide">Next</a>
+				<a href="#" class="ui-btn ui-shadow ui-corner-all" data-transition="slide">Share</a>
+			</div><!-- /header -->
+
+			<div role="main" class="ui-content">
+				<div id="world-map" style="width: 100%; height: 240px"></div>
+				<ul data-role="listview" data-inset="true" data-divider-theme="a">
+					<li data-role="list-divider" style="border-top: 0px; background-color: azure; display:flex; flex-direction:row; justify-content: space-between">
+						<label>世界</label>
+						<label>2%</label>
+					</li>
+					<li data-role="list-divider" style="display:flex; flex-direction:row; justify-content: space-between">
+						<label>亚洲</label>
+						<div style="display:flex; flex-direction:row; justify-content: space-between">
+						<label>2%</label>
+						<label> > </label>
+						</div>
+					</li>
+					<li><a href="#">中国</a></li>
+					<li>日本</li>
+					<li><a href="index.html" data-theme="a">日本<span class="ui-li-count">12%</span></a></li>
+					<li data-role="list-divider">北美洲<span class="ui-li-count">12</span></li>
+					<li data-icon="gear"><a href="#">加拿大
+						<p class="ui-li-aside"><strong>6:24</strong>PM</p>
+</a></li>
+					<li><a href="#">美国</a></li>
+				</ul>
+
+				<h3>Show internal pages:</h3>
+				<p><a href="#two" class="ui-btn ui-shadow ui-corner-all">Show page "two"</a></p>
+				<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
+			</div><!-- /content -->
+
+			<div data-role="footer" data-theme="a" role="contentinfo" class="ui-footer ui-bar-a" style="overflow:hidden;" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" data-icon="grid">世界</a></li>
+						<li><a href="#" data-icon="star">国家</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page one -->
+
+		<!-- Start of second page: #two -->
+		<div data-role="page" id="two" data-theme="a" data-url="two" tabindex="0" class="ui-page ui-page-theme-a" style="min-height: 667px;">
+
+			<div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+				<h1 class="ui-title" role="heading" aria-level="1">Two</h1>
+			</div><!-- /header -->
+
+			<div role="main" class="ui-content">
+				<h2>Two</h2>
+				<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>
+				<p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is. You can add any content or widget to these pages, but we're keeping these simple.</p>
+				<p><a href="https://demos.jquerymobile.com/1.4.3/pages-multi-page/#one" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Back to page "one"</a></p>
+
+			</div><!-- /content -->
+
+			<div data-role="footer" role="contentinfo" class="ui-footer ui-bar-inherit">
+				<h4 class="ui-title" role="heading" aria-level="1">Page Footer</h4>
+			</div><!-- /footer -->
+		</div><!-- /page two -->
+
+		<!-- Start of third page: #popup -->
+		<div data-role="dialog" id="popup" data-url="popup" tabindex="0" class="ui-page ui-page-theme-a ui-dialog" style="min-height: 846px;"><div role="dialog" class="ui-dialog-contain ui-overlay-shadow ui-corner-all">
+
+			<div data-role="header" data-theme="b" role="banner" class="ui-header ui-bar-b"><a role="button" href="https://demos.jquerymobile.com/1.4.3/pages-multi-page/#" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-left">Close</a>
+				<h1 class="ui-title" role="heading" aria-level="1">Dialog</h1>
+			</div><!-- /header -->
+
+			<div role="main" class="ui-content">
+				<h2>Popup</h2>
+				<p>I have an id of "popup" on my page container and only look like a dialog because the link to me had a <code>data-rel="dialog"</code> attribute which gives me this inset look and a <code>data-transition="pop"</code> attribute to change the transition to pop. Without this, I'd be styled as a normal page.</p>
+				<p><a href="https://demos.jquerymobile.com/1.4.3/pages-multi-page/#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left" data-transition="pop" data-direction="reverse">Back to page "one"</a></p>
+			</div><!-- /content -->
+
+			<div data-role="footer" role="contentinfo" class="ui-footer ui-bar-inherit">
+				<h4 class="ui-title" role="heading" aria-level="1">Page Footer</h4>
+			</div><!-- /footer -->
+		</div></div><!-- /page popup -->
+
+
+
+		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div></body>
+		</body>
+</html>
