@@ -49,7 +49,7 @@
 
 
 		<!-- Start of first page: #one -->
-		<div data-role="page" id="one" data-url="one" tabindex="0" class="ui-page ui-page-theme-a ui-page-active" style="min-height: 846px;">
+		<div data-role="page" id="home" data-url="home" tabindex="0" class="ui-page ui-page-theme-a ui-page-active" style="min-height: 846px;">
 
 			<div data-role="header" role="banner" class="ui-header ui-bar-inherit">
 				<h1 class="ui-title" role="heading" aria-level="1">Map Play</h1>
@@ -89,8 +89,8 @@
 			<div data-role="footer" data-theme="a" role="contentinfo" class="ui-footer ui-bar-a" style="overflow:hidden;" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#" data-icon="grid">世界</a></li>
-						<li><a href="#" data-icon="star">国家</a></li>
+						<li><a href="#world" data-icon="grid" data-transition="none">世界</a></li>
+						<li><a href="#country" data-icon="star" data-transition="none">国家</a></li>
 					</ul>
 				</div><!-- /navbar -->
 			</div><!-- /footer -->
@@ -107,7 +107,7 @@
 				<h2>Two</h2>
 				<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>
 				<p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is. You can add any content or widget to these pages, but we're keeping these simple.</p>
-				<p><a href="https://demos.jquerymobile.com/1.4.3/pages-multi-page/#one" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Back to page "one"</a></p>
+				<p><a href="#home" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Back to page "home"</a></p>
 
 			</div><!-- /content -->
 
@@ -126,7 +126,7 @@
 			<div role="main" class="ui-content">
 				<h2>Popup</h2>
 				<p>I have an id of "popup" on my page container and only look like a dialog because the link to me had a <code>data-rel="dialog"</code> attribute which gives me this inset look and a <code>data-transition="pop"</code> attribute to change the transition to pop. Without this, I'd be styled as a normal page.</p>
-				<p><a href="https://demos.jquerymobile.com/1.4.3/pages-multi-page/#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left" data-transition="pop" data-direction="reverse">Back to page "one"</a></p>
+				<p><a href="#home" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left" data-transition="pop" data-direction="reverse">Back to page "home"</a></p>
 			</div><!-- /content -->
 
 			<div data-role="footer" role="contentinfo" class="ui-footer ui-bar-inherit">
@@ -134,7 +134,27 @@
 			</div><!-- /footer -->
 		</div></div><!-- /page popup -->
 
+		<!-- Start of first page: #one -->
+		<div data-role="page" id="country" data-url="country" tabindex="0" class="ui-page ui-page-theme-a" style="min-height: 846px;">
+			<div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+				<h1 class="ui-title" role="heading" aria-level="1">Map Play</h1>
+				<a href="#two" class="ui-btn ui-shadow ui-corner-all" data-transition="slide">Next</a>
+				<a href="#" class="ui-btn ui-shadow ui-corner-all" data-transition="slide">Share</a>
+			</div><!-- /header -->
 
+			<div role="main" class="ui-content">
+				<div id="ca-map" style="width: 100%; height: 240px"></div>
+			</div><!-- /content -->
+
+			<div data-role="footer" data-theme="a" role="contentinfo" class="ui-footer ui-bar-a" style="overflow:hidden;" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-icon="grid" data-transition="none">世界</a></li>
+						<li><a href="#country" data-icon="star" data-transition="none">国家</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page one -->
 
 		<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div></body>
 		</body>

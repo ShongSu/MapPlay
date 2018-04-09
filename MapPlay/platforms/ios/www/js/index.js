@@ -34,7 +34,7 @@ var app = {
         "US"
       ]
         $(function(){
-          $('#world-map').vectorMap({map: 'world_mill',backgroundColor: "Azure",regionStyle:{
+          $('#world-map').vectorMap({map: 'world_mill',backgroundColor: "Azure",zoomButtons : false,zoomMax:1,regionStyle:{
       initial: {
         fill: 'silver',
         "fill-opacity": 1,
@@ -55,7 +55,30 @@ var app = {
       }
     },
     selectedRegions:selected});
+    $('#ca-map').vectorMap({map: 'ca_lcc',backgroundColor: "Azure",zoomButtons : false,zoomMax:1, regionStyle:{
+initial: {
+  fill: 'silver',
+  "fill-opacity": 1,
+  stroke: 'none',
+  "stroke-width": 0,
+  "stroke-opacity": 1
+},
+hover: {
+  fill: 'red',
+  "fill-opacity": 0.8,
+  cursor: 'pointer'
+},
+selected: {
+  fill: 'orange'
+},
+selectedHover: {
+  fill: 'blue'
+}
+},
+selectedRegions:selected});
+
         });
+
         this.receivedEvent('deviceready');
     },
 
