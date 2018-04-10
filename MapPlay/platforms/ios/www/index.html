@@ -100,13 +100,33 @@
 		<div data-role="page" id="two" data-theme="a" data-url="two" tabindex="0" class="ui-page ui-page-theme-a" style="min-height: 667px;">
 
 			<div data-role="header" role="banner" class="ui-header ui-bar-inherit">
-				<h1 class="ui-title" role="heading" aria-level="1">Two</h1>
+				<h1 class="ui-title" role="heading" aria-level="1">国家</h1>
 			</div><!-- /header -->
 
 			<div role="main" class="ui-content">
-				<h2>Two</h2>
-				<p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>
-				<p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is. You can add any content or widget to these pages, but we're keeping these simple.</p>
+				<ul data-role="listview" data-filter="true" data-inset="true" data-divider-theme="a">
+					<li data-role="list-divider">亚洲</li>
+					<li>
+					<form>
+						<fieldset data-role="controlgroup" data-iconpos="right" style="padding:0">
+							<input type="checkbox" name="checkbox-h-cn" id="checkbox-h-cn">
+							<label for="checkbox-h-cn">中国</label>
+							<input type="checkbox" name="checkbox-h-af" id="checkbox-h-af">
+							<label for="checkbox-h-af">阿富汗</label>
+							<input type="checkbox" name="checkbox-h-kr" id="checkbox-h-kr">
+							<label for="checkbox-h-kr">韩国</label>
+							<input type="checkbox" name="checkbox-h-jp" id="checkbox-h-jp">
+							<label for="checkbox-h-jp">日本</label>
+						</fieldset>
+					</form>
+					</li>
+					<li data-role="list-divider">北美洲</li>
+					<li><a href="#">美国</a></li>
+					<li><a href="#">加拿大</a></li>
+					<li data-role="list-divider">Contacts</li>
+					<li><a href="#">Friends</a></li>
+					<li><a href="#">Work</a></li>
+				</ul>
 				<p><a href="#home" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Back to page "home"</a></p>
 
 			</div><!-- /content -->

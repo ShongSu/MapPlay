@@ -32,7 +32,8 @@ var app = {
         "CN",
         "IT",
         "US"
-      ]
+      ];
+      selected = JSON.parse(window.localStorage.getItem("visited"));
         $(function(){
           $('#world-map').vectorMap({map: 'world_mill',backgroundColor: "Azure",zoomButtons : false,zoomMax:1,regionStyle:{
       initial: {
